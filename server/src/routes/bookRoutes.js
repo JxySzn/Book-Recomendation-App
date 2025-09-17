@@ -35,6 +35,8 @@ router.post("/books", protectRoute, async (req, res) => {
   }
 });
 
+
+// pagination endpoint for infinite loading
 router.get("/", protectRoute, async (req, res) => {
   try {
     const page = req.query.page || 1;
@@ -54,11 +56,23 @@ router.get("/", protectRoute, async (req, res) => {
       totalPages: Math.ceil(totalBooks / limit),
     });
 
-    
+
   } catch (error) {
     console.log("Error in get all books route", error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+// delete endpoint 
+router.get('/:id', protectRoute, async (req, res) =>{
+    try {
+        const book = await Book.findById(req.params.id);
+        if(!book) return res.status(404).json({ message: "Book not found" })
+
+        
+    } catch (error) {
+        
+    }
+})
 
 export default router;
