@@ -1,10 +1,12 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
-import { Image } from "expo-image";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello</Text>
+      <Text style={styles.title}>Hello This is the home page</Text>
+      <Link href="/signup">SignUp Page</Link>
+      <Link href="/login">Login page</Link>
     </View>
   );
 }
