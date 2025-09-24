@@ -6,7 +6,7 @@ export default function Index() {
     <View style={styles.container}>
       <Text style={styles.title}>Hello This is the home page</Text>
       <Link href="/signup">SignUp Page</Link>
-      <Link href="/login">Login page</Link>
+      <Link href="/(auth)">Login page</Link>
     </View>
   );
 }
