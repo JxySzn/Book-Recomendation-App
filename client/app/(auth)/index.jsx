@@ -23,7 +23,10 @@ export default function Login() {
   const handleLogin = () => {};
 
   return (
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <View style={styles.container}>
         {/* Illustration */}
         <View style={styles.topIllustration}>
@@ -36,6 +39,28 @@ export default function Login() {
 
         <View style={styles.card}>
           <View style={styles.formContainer}>
+            {/* Us FIELD */}
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Email</Text>
+              <View style={styles.inputContainer}>
+                <Ionicons
+                  name="mail-outline"
+                  size={20}
+                  color={COLORS.primary}
+                  style={styles.inputIcon}
+                />
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter your email"
+                  placeholderTextColor={COLORS.placeholderText}
+                  value={email}
+                  onChangeText={setEmail}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                />
+              </View>
+            </View>
+
             {/* EMAIL FIELD */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Email</Text>
